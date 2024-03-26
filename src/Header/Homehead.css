@@ -1,0 +1,10 @@
+
+@font-face {
+    font-family: Helvetica;
+    src: url('../../public/Helvetica_Neue/HelveticaNeueMedium.otf');
+}
+.font-helvetica{
+    font-family: Helvetica;
+}
+
+

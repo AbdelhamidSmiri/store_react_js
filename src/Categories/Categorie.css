@@ -1,0 +1,5 @@
+.active{
+    background-color: #d1d5db !important;
+    color: rgb(31 41 55 / var(--tw-text-opacity));
+    transition: all 0.3s ease-in-out;
+}
