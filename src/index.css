@@ -15,6 +15,9 @@ body {
   background-color: #1a2531;
   font-family: "Helvetica";
 }
+.bg-primary{
+  background-color: #1a2531;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

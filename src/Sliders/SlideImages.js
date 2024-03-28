@@ -1,9 +1,31 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { RxDotFilled } from 'react-icons/rx';
 
 function SlideImages({ slides }) {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [imageAspectRatio, setImageAspectRatio] = useState(0); // Default to 1 (square)
+
+
+    useEffect(() => {
+        const getImageAspectRatio = async () => {
+            const imageUrl = slides[currentIndex];
+            if (!imageUrl) return;
+
+            try {
+                const image = new Image();
+                image.src = imageUrl;
+                image.onload = () => {
+                    const aspectRatio = image.width / image.height;
+                    setImageAspectRatio(aspectRatio);
+                };
+            } catch (error) {
+                console.error('Error loading image:', error);
+            }
+        };
+
+        getImageAspectRatio();
+    }, []);
 
 
     const goToSlide = (slideIndex) => {
@@ -35,9 +57,13 @@ function SlideImages({ slides }) {
 
     return (
         <>
+            {console.log(slides)}
             <div className='h-full w-full relative group flex justify-center items-end'>
                 <div
-                    style={{ backgroundImage: `url(${slides[currentIndex]})` }}
+                    style={{
+                        paddingTop: `${(1 / imageAspectRatio) * 100}%`, // For square: 100%
+                        backgroundImage: `url(${slides[currentIndex]})`
+                    }}
                     className='w-full h-full rounded-t-md bg-center bg-cover duration-500'
                     onTouchStart={handleTouchStart}
                     onTouchMove={handleTouchMove}

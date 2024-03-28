@@ -4,6 +4,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home/Home';
 import ResultSearch from './Search/ResultSearch';
 import { Pagesearch } from './Search/Pagesearch';
+import SingleProduct from './Product/SingleProduct';
 
 
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/pagesearch" element={<Pagesearch />} />
         <Route path="/resultsearch" element={<ResultSearch />} />
+        <Route path="/singleproduct" element={<SingleProduct />} />
       </Routes>
     </Router>
   );

@@ -22,10 +22,10 @@ export default function Categorie({ listCats, onCategoryClick }) {
                                 type="button"
                                 id={cat.id}
                                 onClick={() => handelCat(cat.id)} // Assuming handelCat is a function to handle the click event
-                                className={`text-gray-300 bg-box font-medium rounded-full text-sm px-4 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2 mb-2 ${activecat.current === cat.id ? 'active' : ''}`}
+                                className={`text-gray-300 bg-box font-medium rounded-full text-sm pr-4 h-11 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2 mb-2 ${activecat.current === cat.id ? 'active' : ''}`}
                             >
                                 <img
-                                    className="w-11 h-11 me-3 rounded-full"
+                                    className="w-full h-full me-3 rounded-full"
                                     src={cat.image}
                                     alt="Jese"
                                 />
