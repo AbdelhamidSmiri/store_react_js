@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { RxDotFilled } from 'react-icons/rx';
 
-function SlideImages({ slides }) {
+function SlideImageSingle({ slides }) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [imageAspectRatio, setImageAspectRatio] = useState(0); // Default to 1 (square)
 
@@ -58,7 +58,7 @@ function SlideImages({ slides }) {
     return (
         <>
             {console.log(slides)}
-            <div className='h-full w-full relative group flex justify-center items-end'>
+            <div className='sm:h-full sm:w-full w-full relative group flex justify-center items-end'>
                 <div
                     style={{
                         paddingTop: `${(1 / imageAspectRatio) * 100}%`, // For square: 100%
@@ -94,4 +94,4 @@ function SlideImages({ slides }) {
     );
 }
 
-export default SlideImages;
+export default SlideImageSingle;

@@ -4,8 +4,9 @@ import "./SingleProduct.css";
 import * as Liens from "../Contants/Liens"
 import { useLocation } from "react-router-dom";
 import SingleHead from "../Header/SingleHead";
-import SlideImages from "../Sliders/SlideImages";
+import SlideImages from "../Sliders/SlideImagesProducts";
 import ProductDetails from "./ProductDetails";
+import SlideImageSingle from "../Sliders/SlideImageSingle";
 
 export default function SingleProduct() {
     const [product, setProduct] = useState(null);
@@ -40,7 +41,7 @@ export default function SingleProduct() {
             {
                 product.images[0] == '["https://placeimg.com/640/480/any"]' ?
                     <img className="w-full   rounded-t-md" src='/stor/images/not-found.jpg' alt="product" /> :
-                    <div className="max-h-dvh"><SlideImages slides={product.images} /></div>
+                    <div className="max-h-dvh"><SlideImageSingle slides={product.images} /></div>
 
 
             }

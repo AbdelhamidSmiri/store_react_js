@@ -4,6 +4,7 @@ import Homehead from '../Header/Homehead';
 import * as Liens from '../Contants/Liens'
 import Productsgrid from '../Product/Productsgrid';
 import { filteredProducts } from '../Contants/Allweneed';
+import FooterHome from '../Footer/FooterHome';
 
 
 
@@ -61,11 +62,13 @@ function Home() {
     return (
         <>
             <Homehead listProducts={listProducts} listCats={listCats} onCategoryClick={handleCategoryClick} />
+            <div className='mb-20'>
             {listProducts && ListFilter === null ? (
                 <Productsgrid listProducts={listProducts} />
             ) : (
                 <Productsgrid listProducts={ListFilter} />
-            )}
+            )}</div>
+            <FooterHome cats={listCats} />
         </>
     );
 }

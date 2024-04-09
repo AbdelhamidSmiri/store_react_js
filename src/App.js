@@ -5,6 +5,7 @@ import Home from './Home/Home';
 import ResultSearch from './Search/ResultSearch';
 import { Pagesearch } from './Search/Pagesearch';
 import SingleProduct from './Product/SingleProduct';
+import Addproduct from './AddProduct/Addproduct';
 
 
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/pagesearch" element={<Pagesearch />} />
         <Route path="/resultsearch" element={<ResultSearch />} />
         <Route path="/singleproduct" element={<SingleProduct />} />
+        <Route path="/addproduct" element={<Addproduct />} />
       </Routes>
     </Router>
   );

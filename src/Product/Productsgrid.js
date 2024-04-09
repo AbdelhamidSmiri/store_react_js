@@ -35,13 +35,13 @@ export default function Productsgrid({ listProducts }) {
     return (
         <div className='mt-0 m-3 grid md:grid-cols-3 grid-cols-2 md:gap-8 gap-3'>
             <div className='flex flex-col' id='mycol1'>
-                {col1Products.map((product) => (
-                    <Products product={product} />
+                {col1Products.map((product,index) => (
+                    <Products key={index} product={product} />
                 ))}
             </div>
             <div className='flex flex-col' id='mycol2'>
-                {col2Products.map((product) => (
-                    <Products product={product} />
+                {col2Products.map((product,index) => (
+                    <Products key={index} product={product} />
                 ))}
             </div>
         </div>

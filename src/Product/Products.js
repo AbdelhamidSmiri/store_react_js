@@ -1,7 +1,7 @@
 import { TrimString, Star } from "../Contants/Allweneed";
 import "./Products.css";
 import * as Liens from "../Contants/Liens"
-import SlideImages from "../Sliders/SlideImages";
+import SlideImagesProducts from "../Sliders/SlideImagesProducts";
 import { Link, useNavigate } from "react-router-dom";
 export default function Products({ product }) {
     const navigate = useNavigate();
@@ -19,7 +19,7 @@ export default function Products({ product }) {
                     {
                         product.images[0].startsWith('[') ?
                             <img className="w-52  rounded-t-md" src='/stor/images/not-found.jpg' alt="product" /> :
-                            <SlideImages slides={product.images} />
+                            <SlideImagesProducts slides={product.images} />
 
 
 

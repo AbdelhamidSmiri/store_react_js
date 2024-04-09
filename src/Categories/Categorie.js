@@ -1,8 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Categorie.css"
 
 export default function Categorie({ listCats, onCategoryClick }) {
     const activecat = useRef(1);
+    const [width, setWidth] = useState(window.innerWidth);
 
 
 
@@ -12,7 +13,8 @@ export default function Categorie({ listCats, onCategoryClick }) {
     }
     return (
         <>
-            <div className={`flex overflow-x-scroll pl-3 {activecat.current}`} >
+        
+            <div className={`relative shrink-0 grow-0 flex overflow-auto pl-3 {activecat.current}`} style={{width:width}} >
 
                 {listCats?.length > 0 ? (
                     // If listCats is not undefined or empty, map over each category
