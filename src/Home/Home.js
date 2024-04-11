@@ -68,6 +68,7 @@ function Home() {
             ) : (
                 <Productsgrid listProducts={ListFilter} />
             )}</div>
+            <div className='before-footer pb-16'></div>
             <FooterHome cats={listCats} />
         </>
     );

@@ -19,10 +19,10 @@ export default function FooterHome({cats}) {
     <nav>
       <ul>
         <li>
-          <a href="" className="">
+          <a href="" className="text-center flex justify-center flex-col items-center gap-1">
             <svg
-              width="30px"
-              height="30px"
+              width="20px"
+              height="20px"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -35,14 +35,15 @@ export default function FooterHome({cats}) {
                 strokeLinejoin="round"
               />
             </svg>
+            <span className="text-xs">Accueil</span>
           </a>
         </li>
         <li>
-          <a href="" className="">
+          <a href="" className="text-center flex justify-center flex-col items-center gap-1">
             <svg
               fill="#000000"
-              height="30px"
-              width="30px"
+              height="20px"
+              width="20px"
               version="1.1"
               id="Icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -58,6 +59,8 @@ export default function FooterHome({cats}) {
 	C17.51,18.03,22,14.57,22,10.32z"
               />
             </svg>
+            <span className="text-xs">Message</span>
+
           </a>
         </li>
         <li className="active-cl">
@@ -77,24 +80,27 @@ export default function FooterHome({cats}) {
                 strokeLinejoin="round"
               />
             </svg>
+
           </a>
         </li>
         <li>
-          <a href="" className="">
-            <svg width="30px" height="30px" viewBox="0 0 16 16" version="1.1">
+          <a href="" className="text-center flex justify-center flex-col items-center gap-1">
+            <svg width="20px" height="20px" viewBox="0 0 16 16" version="1.1">
               <path
                 fill="#000"
                 d="M12 6v-6h-8v6h-4v7h16v-7h-4zM7 12h-6v-5h2v1h2v-1h2v5zM5 6v-5h2v1h2v-1h2v5h-6zM15 12h-6v-5h2v1h2v-1h2v5z"
               ></path>
               <path fill="#000" d="M0 16h3v-1h10v1h3v-2h-16v2z"></path>
             </svg>
+            <span className="text-xs">Stock</span>
+
           </a>
         </li>
         <li>
-          <a href="" className="">
+          <a href="" className="text-center flex justify-center flex-col items-center gap-1">
             <svg
-              width="30px"
-              height="30px"
+              width="20px"
+              height="20px"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -114,6 +120,7 @@ export default function FooterHome({cats}) {
                 strokeLinejoin="round"
               />
             </svg>
+            <span className="text-xs">Compte</span>
           </a>
         </li>
       </ul>
