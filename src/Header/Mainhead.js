@@ -1,4 +1,3 @@
-import { FavoriButton } from "../Contants/Allweneed";
 import "./SingleHead.css";
 import { useNavigate } from "react-router-dom";
 
@@ -22,7 +21,7 @@ export default function Mainhead() {
           >
             <path
               d="M15 18l-6-6 6-6"
-              stroke="#FFF"
+              stroke="#000"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -32,7 +31,7 @@ export default function Mainhead() {
               y1="12"
               x2="21"
               y2="12"
-              stroke="#FFF"
+              stroke="#000"
               strokeWidth="2"
             />
           </svg>

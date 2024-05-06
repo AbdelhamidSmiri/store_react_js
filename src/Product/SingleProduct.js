@@ -39,7 +39,7 @@ export default function SingleProduct() {
             <SingleHead cat={product.category} />
 
             {
-                product.images[0] == '["https://placeimg.com/640/480/any"]' ?
+                product.images[0].startsWith('[') ?
                     <img className="w-full   rounded-t-md" src='/stor/images/not-found.jpg' alt="product" /> :
                     <div className="max-h-dvh"><SlideImageSingle slides={product.images} /></div>
 

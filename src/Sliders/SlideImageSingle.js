@@ -10,6 +10,7 @@ function SlideImageSingle({ slides }) {
     useEffect(() => {
         const getImageAspectRatio = async () => {
             const imageUrl = slides[currentIndex];
+            console.log(imageUrl);
             if (!imageUrl) return;
 
             try {

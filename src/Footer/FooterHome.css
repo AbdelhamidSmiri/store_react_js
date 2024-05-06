@@ -1,10 +1,10 @@
-nav{
+.home nav{
     position: fixed;
     inset: auto 0 0 0;
     --w-h-item:60px;
     --position-x-active:150px;
 }
-nav ul{
+.home nav ul{
     padding: 0;
     margin: 0;
     display: grid;
@@ -13,13 +13,13 @@ nav ul{
     grid-template-rows: var(--w-h-item);
     justify-content: space-between;
 }
-ul li{
+.home ul li{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-ul li.active-cl{
+.home ul li.active-cl{
     transform: translateY(-20px);
 }
 
@@ -43,6 +43,7 @@ nav .effect{
     background-color: #FFF;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
+    box-shadow: -9px 0px 10px 2px #e7e7e7cc;
 }
 .effect::after {
     content:"";
@@ -53,6 +54,7 @@ nav .effect{
     background-color: #FFF;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
+    box-shadow: 20px 0px 10px 2px #e7e7e7cc;
 
 }
 
@@ -60,7 +62,7 @@ nav .effect{
     position: absolute;
     width: var(--w-h-item);
     height: var(--w-h-item);
-    background-color: #FFF;
+    background-color: #000000;
     left: var(--position-x-active);
     border-radius: 50%;
     box-shadow: 0 20px 20px #5555;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./FooterHome.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function FooterHome({cats}) {
   const navigate = useNavigate();
@@ -74,7 +74,7 @@ export default function FooterHome({cats}) {
             >
               <path
                 d="M4 12H20M12 4V20"
-                stroke="#000"
+                stroke="#FFF"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -97,7 +97,7 @@ export default function FooterHome({cats}) {
           </a>
         </li>
         <li>
-          <a href="" className="text-center flex justify-center flex-col items-center gap-1">
+          <Link to={"adduser"} className="text-center flex justify-center flex-col items-center gap-1">
             <svg
               width="20px"
               height="20px"
@@ -121,7 +121,7 @@ export default function FooterHome({cats}) {
               />
             </svg>
             <span className="text-xs">Compte</span>
-          </a>
+          </Link>
         </li>
       </ul>
       <div className="effect">

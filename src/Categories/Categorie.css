@@ -1,5 +1,8 @@
-.active{
-    background-color: #d1d5db !important;
+.home .active{
+    background-color: #000 !important;
+    /* border: 2px solid #ffffff; */
     color: rgb(31 41 55 / var(--tw-text-opacity));
     transition: all 0.3s ease-in-out;
+    color: #FFF !important;
 }
+

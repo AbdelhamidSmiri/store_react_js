@@ -1,5 +1,9 @@
 .bg-box{
-    background-color: #2f3d4e;
+    background-color: #f9f9f9;
+
+}
+.bg-box-product{
+    border-radius: 5px;
 }
 @font-face {
     font-family: 'HelveticaLight';
