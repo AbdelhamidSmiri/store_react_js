@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import Homehead from '../Header/Homehead';
 import * as Liens from '../Contants/Liens'
 import Productsgrid from '../Product/Productsgrid';
@@ -7,7 +7,7 @@ import { filteredProducts } from '../Contants/Allweneed';
 import FooterHome from '../Footer/FooterHome';
 
 
-
+export const AppContext = createContext({});
 
 function Home() {
     const [listProducts, setListProducts] = useState();
@@ -15,6 +15,9 @@ function Home() {
     const [selectedCategoryId, setSelectedCategoryId] = useState(); // default cat
     const [ListFilter, setListFilter] = useState(null);
     const [valideget, setValidget] = useState(false);
+
+
+    
 
 
 
@@ -65,8 +68,9 @@ function Home() {
     }, [selectedCategoryId, listProducts]);
 
     return (
+        <AppContext.Provider value={{listCats,listProducts,selectedCategoryId}}>
         <div className='home'>
-            <Homehead listProducts={listProducts} listCats={listCats} onCategoryClick={handleCategoryClick} activedefault={selectedCategoryId} />
+            <Homehead listProducts={listProducts}  onCategoryClick={handleCategoryClick} />
             <div className='mb-20'>
             {listProducts && ListFilter === null ? (
                 <Productsgrid listProducts={listProducts} />
@@ -74,8 +78,8 @@ function Home() {
                 <Productsgrid listProducts={ListFilter} />
             )}</div>
             <div className='before-footer pb-16'></div>
-            <FooterHome cats={listCats} />
         </div>
+        </AppContext.Provider>
     );
 }
 

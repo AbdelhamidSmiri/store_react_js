@@ -2,10 +2,13 @@ import "./Homehead.css"
 import Basket from "../Basket/Basket"
 import Search from "../Search/Search"
 import Categorie from "../Categories/Categorie"
+import { useContext } from "react"
+import { AppContext } from "../Home/Home"
 
-export default function Homehead({ listProducts, listCats, onCategoryClick,activedefault }) {
+export default function Homehead({ onCategoryClick }) {
+    const context = useContext(AppContext);
     return (
-        <>{console.log(activedefault)}
+        <>
             <div className="flex justify-between mx-5 my-7">
                 <div>
                     <h2 className="text-gray-950  text-2xl tracking-wide font-helvetica">Discover products</h2>
@@ -13,11 +16,11 @@ export default function Homehead({ listProducts, listCats, onCategoryClick,activ
                 <div>
                     <div className="flex justify-between gap-4 ">
                         <a className="relative"><Basket color="black" /></a>
-                        <Search color="black" listProducts={listProducts} />
+                        <Search color="black" listProducts={context.listProducts} />
                     </div>
                 </div>
             </div>
-            <Categorie listCats={listCats} onCategoryClick={onCategoryClick} activedefault={activedefault} />
+            <Categorie listCats={context.listCats} onCategoryClick={onCategoryClick} activedefault={context.selectedCategoryId} />
         </>
     )
 }

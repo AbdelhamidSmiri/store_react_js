@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./FooterHome.css";
 import { Link, useNavigate } from "react-router-dom";
+import Home from "../Home/Home";
 
 export default function FooterHome({cats}) {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ export default function FooterHome({cats}) {
     <nav>
       <ul>
         <li>
-          <a href="" className="text-center flex justify-center flex-col items-center gap-1">
+          <Link to="/" className="text-center flex justify-center flex-col items-center gap-1">
             <svg
               width="20px"
               height="20px"
@@ -36,10 +37,10 @@ export default function FooterHome({cats}) {
               />
             </svg>
             <span className="text-xs">Accueil</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="" className="text-center flex justify-center flex-col items-center gap-1">
+          <Link to="chat" className="text-center flex justify-center flex-col items-center gap-1">
             <svg
               fill="#000000"
               height="20px"
@@ -61,7 +62,7 @@ export default function FooterHome({cats}) {
             </svg>
             <span className="text-xs">Message</span>
 
-          </a>
+          </Link>
         </li>
         <li className="active-cl">
           <a onClick={() => handelClick()} className="">
@@ -84,7 +85,7 @@ export default function FooterHome({cats}) {
           </a>
         </li>
         <li>
-          <a href="" className="text-center flex justify-center flex-col items-center gap-1">
+          <Link to="stock" className="text-center flex justify-center flex-col items-center gap-1">
             <svg width="20px" height="20px" viewBox="0 0 16 16" version="1.1">
               <path
                 fill="#000"
@@ -94,7 +95,7 @@ export default function FooterHome({cats}) {
             </svg>
             <span className="text-xs">Stock</span>
 
-          </a>
+          </Link>
         </li>
         <li>
           <Link to={"adduser"} className="text-center flex justify-center flex-col items-center gap-1">

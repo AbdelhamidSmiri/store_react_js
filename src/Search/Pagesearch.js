@@ -58,10 +58,29 @@ export function Pagesearch() {
                 <div className="search-container flex items-center justify-between border-b p-2 pb-1 border-gray-200 ">
 
                     <button onClick={handleBack} className="">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            <line x1="9" y1="12" x2="21" y2="12" stroke="currentColor" strokeWidth="2" />
-                        </svg>
+                    <svg
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 18l-6-6 6-6"
+              stroke="#000"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <line
+              x1="9"
+              y1="12"
+              x2="21"
+              y2="12"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
                     </button>
 
                     <div className="relative flex items-center input-search w-11/12">
