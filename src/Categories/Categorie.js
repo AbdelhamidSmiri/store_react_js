@@ -28,12 +28,12 @@ export default function Categorie({onCategoryClick}) {
                                 type="button"
                                 id={cat.id}
                                 onClick={() => handelCat(cat.id)} // Assuming handelCat is a function to handle the click event
-                                className={`text-gray-950 bg-box font-medium rounded-full text-sm pr-4 h-11 text-center grid items-center grid-cols-2 dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2 mb-2 ${activecat.current === cat.id ? 'active' : ''}`}
+                                className={`text-gray-950 bg-box font-medium rounded-md text-sm pr-4 h-11 text-center grid items-center grid-cols-2 dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2 mb-2 ${activecat.current === cat.id ? 'active' : ''}`}
                                 style={{backgroundColor:"#e9e9e9d6"}}
                             >
                                 <div className="">
                                 <img
-                                    className=" h-full max-h-11 me-3 rounded-full"
+                                    className=" h-full max-h-11 me-3 rounded-md rounded-tr-none rounded-br-none"
                                     src={cat.image}
                                     alt="Jese"
                                 /></div>
