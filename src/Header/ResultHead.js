@@ -4,7 +4,7 @@ import Search from "../Search/Search"
 import { useNavigate } from "react-router-dom";
 import { filteredProducts } from "../Contants/Allweneed";
 
-export default function ResultHead({ listProducts, val }) {
+export default function ResultHead({ val }) {
     const navigate = useNavigate();
 
     const handleBack = () => {
@@ -42,7 +42,7 @@ export default function ResultHead({ listProducts, val }) {
           </svg>
             </button>
             <div className="w-4/6">
-                <input type="text" placeholder="Rechercher..." className="w-full rounded-3xl border-1 border-gray-300 bg-gray-100 " id="input_search" value={val} onClick={() => { navigate('/pagesearch', { state: { listProducts: listProducts, value: val } }); }} />
+                <input type="text" placeholder="Rechercher..." className="w-full rounded-3xl border-1 border-gray-300 bg-gray-100 " id="input_search" value={val} onClick={() => { navigate('/pagesearch', { state: {value: val } }); }} />
             </div>
             <div>
                 <a className="relative"><Basket color="black" /></a>

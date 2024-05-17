@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Notice from "../Notice/Notice";
 import "./Basket.css";
 const Basket = ({ color }) => {
@@ -17,9 +17,9 @@ const Basket = ({ color }) => {
         }
     };
 
-    useEffect(() => {
+    useMemo(() => {
         getCart()
-    }, []);
+    }, [count]);
 
 
     return (

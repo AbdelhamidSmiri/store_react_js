@@ -1,15 +1,16 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import { useState, useEffect } from "react";
 import "./Search.css";
 import * as Lien from '../Contants/Liens';
 import { useLocation, useNavigate } from "react-router-dom";
 import { filteredProducts } from '../Contants/Allweneed';
+import { AppContext } from '../Default/Layout';
 
 export function Pagesearch() {
+    const context = useContext(AppContext);
     const [isVisible, setIsVisible] = useState(true);
     const [searchValue, setSearchValue] = useState('');
     const location = useLocation();
-    const { listProducts } = location.state;
     const { value } = location.state;
     const inputRef = useRef(null);
     const navigate = useNavigate();
@@ -31,10 +32,10 @@ export function Pagesearch() {
 
         // Log the value to the console
         console.log(value);
-        console.log(filteredProducts(listProducts, searchValue));
+        console.log(filteredProducts(context.listProducts, searchValue));
 
         // Navigate to ResultSearch route with state
-        navigate('/resultsearch', { state: { listProducts: listProducts, val: value } });
+        navigate('/resultsearch', { state: {  val: value } });
     };
 
     useEffect(() => {
@@ -99,7 +100,7 @@ export function Pagesearch() {
 
                 </div>
                 <div className="available-height overflow-y-auto mt-5">
-                    {filteredProducts(listProducts, searchValue).map((product, index) => (
+                    {filteredProducts(context.listProducts, searchValue).map((product, index) => (
 
                         <a key={index} href={Lien.products + "/" + product.id} className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
                             <img className="w-11 h-11 me-2 rounded-full" src={product.images[0]} alt="Jese image" />

@@ -1,21 +1,24 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./Search.css";
 import Pagesearch from "./Pagesearch";
 import { Link, useNavigate } from "react-router-dom";
-const Search = ({ color, listProducts }) => {
+import { AppContext } from "../Default/Layout";
+const Search = ({ color }) => {
+    const context = useContext(AppContext);
 
     const navigate = useNavigate();
 
     const handelsearch = () => {
-        navigate('/pagesearch', { state: { listProducts: listProducts } });
+        navigate('/pagesearch', { state: { listProducts: context.listProducts } });
     };
 
-
-
-
-
+    useEffect(() => {
+        console.log(context.listProducts);
+    }, [])
+    
 
     return (
+        
         <>
             <a className="search-button relative" onClick={handelsearch}>
                 <svg className="search" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" id="Calque_1" x="0px" y="0px" viewBox="0 0 1024 1024" >

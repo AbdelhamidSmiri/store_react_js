@@ -1,40 +1,28 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import "./Categorie.css"
+import { HomeContext } from "../Home/Home";
+import { AppContext } from "../Default/Layout";
 
-export default function Categorie({ listCats, onCategoryClick,activedefault }) {
+
+export default function Categorie({onCategoryClick}) {
     const activecat = useRef(1);
     const [width, setWidth] = useState(window.innerWidth);
 
+    const context = useContext(AppContext);
 
 
     const handelCat = (categoryId) => {
         onCategoryClick(categoryId);
-        
-
+        activecat.current = categoryId
     }
-    useEffect(() => {
-        console.log("active default : ",activedefault)
-        if(activedefault){
-            console.log("coco")
-            console.log(activecat.current)
-            activecat.current = activedefault
-            console.log(activecat.current)
-        }
-    }, [activedefault])
 
-    useEffect(() => {
-        console.log(activedefault)
-
-    }, [activedefault])
-    
     return (
         <>
-        {console.log(activedefault)}
             <div className={`relative shrink-0 grow-0 flex overflow-auto pl-3 {activecat.current}`} style={{width:width}} >
 
-                {listCats?.length > 0 ? (
+                {context.listCats?.length > 0 ? (
                     // If listCats is not undefined or empty, map over each category
-                    listCats.map((cat, index) => (
+                    context.listCats.map((cat, index) => (
                         <div className="w-fit min-w-fit" key={index}>
                             <button
                                 type="button"

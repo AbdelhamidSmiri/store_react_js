@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./FooterHome.css";
 import { Link, useNavigate } from "react-router-dom";
-import Home from "../Home/Home";
+import { AppContext } from "../Default/Layout";
 
-export default function FooterHome({cats}) {
+export default function FooterHome() {
   const navigate = useNavigate();
+  const context = useContext(AppContext);
+
   const handelClick = () => {
-    navigate("/addproduct", { state: { cats: cats } });
+    navigate("/addproduct", { state: { cats: context.cats } });
   };
 
   useEffect(() => {
@@ -16,7 +18,7 @@ export default function FooterHome({cats}) {
   });
 
   return (
-    <>{console.log(cats)}
+    <>{console.log(context.cats)}
     <nav>
       <ul>
         <li>

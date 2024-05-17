@@ -9,6 +9,7 @@ export function TrimString({ Title, length }) {
 }
 
 export function filteredProducts(listProducts, searchValue) {
+    console.log(listProducts,searchValue);
     return listProducts.filter((product) => {
         if (typeof searchValue !== 'number') {
             return (

@@ -251,7 +251,7 @@ const AddUser = () => {
               {displayErreur("tel")}
             </p>
           </div>
-          {(!checkValid).toString()}
+          {/* {(!checkValid).toString()} */}
           <button
             onClick={submitForm}
             type="submit"

@@ -1,10 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Mainhead from "../Header/Mainhead";
 import "./Addproduct.css";
 import { useLocation } from "react-router-dom";
 import { products } from "../Contants/Liens";
+import { AppContext } from "../Default/Layout";
 
 const Addproduct = () => {
+  const context = useContext(AppContext);
   const inputTitleRef = useRef();
   const inputPriceRef = useRef();
   const inputDescRef = useRef();
@@ -23,14 +25,14 @@ const Addproduct = () => {
   }, [])
   
 
-  const location = useLocation();
-  const { cats } = location.state;
+
+
 
   const getcats = () => {
     return (
       <>
         <option>Choisissez une catégorie</option>
-        {cats.map((cat, index) => (
+        {context.listCats.map((cat, index) => (
           <option key={index} value={cat.id}>
             {cat.name}
           </option>
